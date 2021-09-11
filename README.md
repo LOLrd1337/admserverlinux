@@ -1,0 +1,2 @@
+# admserverlinux
+All nett
