@@ -1,0 +1,34 @@
+samuel
+
+sudo su 
+
+apt update -y 
+apt upgrade -y
+apt install bind9 bind9-doc dnsutils -y
+
+======================================
+ip -4 a
+nano -w /etc/bind/named.conf.options
+
+acl "interna" {
+	127.0.0.0/8;
+	::1/128;
+	192.168.15.0/24;
+};
+options{
+	directory “/var/cache/bind”
+	forwarders { 
+		8.8.8.8 ;
+		8.8.4.4 ;
+         
+	};
+	dnssec-validation auto;
+	auto-nxdomain no;
+	listen-on { 127.0.01; 192.168.15.76; };
+	listen-on-v6 { ::1; }]
+	allow-query { "interna"; };
+	allow-recursion { "interna"/ };
+	allow-transfer { none; };
+}; 
+
+                         
