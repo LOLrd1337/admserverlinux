@@ -1,2 +1,2 @@
 # admserverlinux
-All nett
+hello, cruel world.
