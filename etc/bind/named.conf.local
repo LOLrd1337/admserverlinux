@@ -1,0 +1,8 @@
+zone "l1samuel.lan" {
+        type master;
+        file "/etc/bind/db.l1samuel.lan";
+};
+zone "30.15.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/db.30.15.168.192";
+};
